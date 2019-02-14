@@ -1,0 +1,104 @@
+class Solution {
+    public String intToRoman(int num) throws ArrayIndexOutOfBoundsException{
+
+        try{
+            int len = Integer.toString(num).length();
+            int [] word = new int[len];
+            String ro = new String();
+            for(int i = 0; i <= len -1; i++){
+                word[i] = num%10;
+                num /=10;
+                switch(i){
+                    case 0:
+                        switch(word[i]){
+                            case 0:
+                                break;
+                            case 1:
+                                ro = "I" + ro;break;
+                            case 2:
+                                ro = "II" + ro;break;
+                            case 3:
+                                ro = "III" + ro;break;
+                            case 4:
+                                ro = "IV" + ro;break;
+                            case 5:
+                                ro = "V" + ro;break;
+                            case 6:
+                                ro = "VI" + ro;break;
+                            case 7:
+                                ro = "VII" + ro;break;
+                            case 8:
+                                ro = "VIII" + ro;break;
+                            case 9:
+                                ro = "IX" + ro;break;
+                        }
+                        break;
+                    case 1:
+                        switch(word[i]){
+                            case 0:
+                                break;
+                            case 1:
+                                ro = "X" + ro;break;
+                            case 2:
+                                ro = "XX" + ro;break;
+                            case 3:
+                                ro = "XXX" + ro;break;
+                            case 4:
+                                ro = "XL" + ro;break;
+                            case 5:
+                                ro = "L" + ro;break;
+                            case 6:
+                                ro = "LX" + ro;break;
+                            case 7:
+                                ro = "LXX" + ro;break;
+                            case 8:
+                                ro = "LXXX" + ro;break;
+                            case 9:
+                                ro = "XC" + ro;break;
+                        }
+                        break;
+                    case 2:
+                        switch(word[i]){
+                            case 0:
+                                break;
+                            case 1:
+                                ro = "C" + ro;break;
+                            case 2:
+                                ro = "CC" + ro;break;
+                            case 3:
+                                ro = "CCC" + ro;break;
+                            case 4:
+                                ro = "CD" + ro;break;
+                            case 5:
+                                ro = "D" + ro;break;
+                            case 6:
+                                ro = "DC" + ro;break;
+                            case 7:
+                                ro = "DCC" + ro;break;
+                            case 8:
+                                ro = "DCCC" + ro;break;
+                            case 9:
+                                ro = "CM" + ro;break;
+                        }
+                        break;
+                    case 3:
+                        switch(word[i]){
+                            case 0:
+                                break;
+                            case 1:
+                                ro = "M" + ro;break;
+                            case 2:
+                                ro = "MM" + ro;break;
+                            case 3:
+                                ro = "MMM" + ro;break;
+                        }
+                        break;
+                }
+
+            }return ro;
+
+        }catch (ArrayIndexOutOfBoundsException e) {
+            return null;
+        }
+    }
+}
